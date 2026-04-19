@@ -34,8 +34,10 @@ function addSquare(){
 //Make a function that changes all the colors of all the squares
 //make sure the button calls it
 function changeColors(){
-    //make an array
+    
     let allSquares = document.querySelectorAll(".square");
-    //for of loop or just do a regular for loop with index
-    //change the color
+    allSquares.forEach(square => {
+        square.style.backgroundColor = getRandomColor();
+    });
+    
 }
