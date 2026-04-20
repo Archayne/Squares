@@ -23,10 +23,8 @@ function addSquare(){
     square.className = "square";
     square.style.width = parseInt(Math.random()*11) + 45 + "px";
     square.style.height = parseInt(Math.random()*11) + 45 + "px";
-    console.log(square.style.width);
-    console.log(square.style.height);
-    square.style.left = parseInt(Math.random()*650) + "px";
-    square.style.top = parseInt(Math.random()*250) + "px";
+    square.style.left = parseInt(Math.random()*649) + "px";
+    square.style.top = parseInt(Math.random()*248) + "px";
     
     square.style.backgroundColor = getRandomColor();
     //I can put a onclick and a function(this)
