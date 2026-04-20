@@ -1,5 +1,5 @@
 let squareArea = document.querySelector("#squarearea");
-
+let zLevel = 3;
 let squareCount = parseInt(Math.random()*21)+30; //30-50
 //make some variable for a really big zIndex
 function pageSetup(){
@@ -7,6 +7,8 @@ function pageSetup(){
         //make a square
         addSquare();
     }
+    
+    squareClick();
 }
 
 function getRandomColor(){
@@ -39,10 +41,33 @@ function addSquare(){
 //Make a function that changes all the colors of all the squares
 //make sure the button calls it
 function changeColors(){
-    let square = document.createElement
+    let square = document.createElement;
     let allSquares = document.querySelectorAll(".square");
     allSquares.forEach(square => {
         square.style.backgroundColor = getRandomColor();
     });
     
+}
+
+function squareClick(){
+    let allSquares = document.querySelectorAll(".square");
+    
+    allSquares.forEach(square => {
+        square.style.zIndex = 1;
+        square.addEventListener("click", ()=>{
+            //console.log("square clicked!");
+            //console.log("current zLevel:" + zLevel);
+            //square.style.zIndex = zLevel;
+            //console.log("square current Z-Index:" + square.style.zIndex);
+            if(parseInt(square.style.zIndex) === (zLevel-1)){
+                console.log("removing square of z-Index:" + square.style.zIndex);
+                square.remove();
+            }else{
+                square.style.zIndex = zLevel;
+                console.log("square updated zIndex:" + square.style.zIndex);
+                zLevel++;
+            }
+
+        });
+    });
 }
